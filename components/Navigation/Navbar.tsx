@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const { navbarOffSet, navbarRef, previousOffSet } = useNavbarOffset();
+    const { navbarOffSet, navbarRef } = useNavbarOffset();
 
     const [previousOffset, setPreviousOffset] = useState(0);
     const [showNavbar, setShowNavbar] = useState(true);
@@ -16,11 +16,14 @@ const Navbar = () => {
             setShowNavbar(true);
         }
         setPreviousOffset(navbarOffSet);
-    }, [previousOffSet, navbarOffSet]);
+    }, [navbarOffSet, previousOffset]);
 
     return (
-        <header className={`h-[100px] p-6 fixed top-0 w-full transition-all duration-500 ease-in-out  ${!showNavbar ? "-top-44 transition ease-in delay-100" : showNavbar && navbarOffSet === 0 ? "transition ease-in delay-500" : "transition ease-in delay-100  shadow-md backdrop-blur-sm"}`} ref={navbarRef}>
-            <nav className="flex justify-between items-center" >
+        <header
+            className={`h-[100px] p-6 fixed w-full transition-all duration-500 ease-in-out ${!showNavbar ? "-top-44 transition ease-in delay-100" : "top-0 transition ease-in delay-75 shadow-md backdrop-blur-sm"} ${navbarOffSet === 0 ? "bg-none shadow-none backdrop-blur-0" : ''}`}
+            ref={navbarRef}
+        >
+            <nav className="flex justify-between items-center">
                 <div>
                     <h1 className="text-3xl">J</h1>
                 </div>
