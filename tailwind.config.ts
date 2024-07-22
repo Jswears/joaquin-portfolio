@@ -17,6 +17,9 @@ const config: Config = {
       },
       fontFamily: {
         ibmPlexMono: ['var(--font-ibm-plex-mono)', 'IBM Plex Mono', 'monospace'],
+      },
+      colors: {
+        "charcoal-gray": "#252525",
       }
     },
   },

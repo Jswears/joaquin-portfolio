@@ -1,4 +1,4 @@
-import HomeSection from "@/components/Home/Home";
+import HomeSection from "@/components/Home/HomeSection";
 import Image from "next/image";
 
 export default function Home() {
