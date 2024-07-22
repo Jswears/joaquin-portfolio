@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} font-ibmPlexMono`}>
+      <body className={`${ibmPlexMono.variable} font-ibmPlexMono text-charcoal-gray`}>
         <Navbar />
         {children}
       </body>
