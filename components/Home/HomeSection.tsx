@@ -1,6 +1,6 @@
 const HomeSection = () => {
     return (
-        <section className="p-6 pt-[200px] flex flex-col items-center">
+        <section className="p-6 flex flex-col justify-center items-center">
             <div className="p-4 flex flex-col gap-3">
                 <p className="text-lg">Hi, I am</p>
                 <h1 className="text-4xl font-bold">Joaquin Swears</h1>
