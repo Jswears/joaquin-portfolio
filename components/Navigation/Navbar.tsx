@@ -19,7 +19,7 @@ const Navbar = () => {
     }, [previousOffSet, navbarOffSet]);
 
     return (
-        <header className={`h-[100px] p-6 fixed top-0 w-full transition-all duration-500 ease-in-out  ${!showNavbar ? "-top-28 transition ease-in delay-100" : showNavbar && navbarOffSet === 0 ? "transition ease-in delay-500" : "transition ease-in delay-100  shadow-md backdrop-blur-sm"}`} ref={navbarRef}>
+        <header className={`h-[100px] p-6 fixed top-0 w-full transition-all duration-500 ease-in-out  ${!showNavbar ? "-top-44 transition ease-in delay-100" : showNavbar && navbarOffSet === 0 ? "transition ease-in delay-500" : "transition ease-in delay-100  shadow-md backdrop-blur-sm"}`} ref={navbarRef}>
             <nav className="flex justify-between items-center" >
                 <div>
                     <h1 className="text-3xl">J</h1>
