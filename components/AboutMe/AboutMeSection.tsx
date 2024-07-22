@@ -24,7 +24,7 @@ const AboutMeSection = () => {
                 </ul>
             </div>
             <div className="py-4 mb-8">
-                <Image src="/profile.png" alt="About Me" width={226} height={229} className="mx-auto" />
+                <Image src="/MyImage.png" alt="About Me" width={226} height={229} className="mx-auto  rounded-md " />
             </div>
         </section>
     );
