@@ -1,0 +1,73 @@
+'use client';
+
+import React, { useEffect, useState } from "react";
+
+interface ExperienceItem {
+    name: string;
+    id: string;
+    title: string;
+    date: string;
+    firstDescription: string;
+    secondDescription: string;
+    thirdDescription: string;
+}
+
+const experienceItems: ExperienceItem[] = [
+    { name: "Ironhack", id: "ironhack", title: "Lead Engineer @ Peru", date: "May 2018 - Present", firstDescription: "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more", secondDescription: "Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements", thirdDescription: "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders" },
+    { name: "Remy", id: "remy", title: "Software Engineer @ Remy", date: "May 2011 - Present", firstDescription: "123Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more", secondDescription: "Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements", thirdDescription: "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders" },
+    { name: "Apple", id: "apple", title: "Software Engineer @ Apple", date: "May 2019 - Present", firstDescription: "223Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more", secondDescription: "Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements", thirdDescription: "Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders" },
+];
+
+const ExperienceSection: React.FC = () => {
+    const [currentExperienceItemName, setCurrentExperienceItemName] = useState<string>('ironhack');
+    const [currentExperience, setCurrentExperience] = useState<ExperienceItem>(() => experienceItems.find(item => item.id === 'ironhack')!);
+    const [animate, setAnimate] = useState<boolean>(true);
+
+    const handleExperienceItemClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        const buttonText = event.currentTarget.innerText.toLowerCase();
+        setAnimate(false); // Reset animation
+        setTimeout(() => {
+            setCurrentExperienceItemName(buttonText);
+            const experience = experienceItems.find(item => item.name.toLowerCase() === buttonText);
+            if (experience) {
+                setCurrentExperience(experience);
+            }
+            setAnimate(true); // Trigger animation after state update
+        }, 200); // Delay to match the transition duration
+    };
+
+    useEffect(() => {
+        console.log(currentExperience);
+    }, [currentExperience]);
+
+    return (
+        <section className="px-6">
+            <div className="mb-10">
+                <h1 className="text-left text-[26px] font-bold tracking-[10px] ">2. Experience</h1>
+                <hr className="h-px border-charcoal-gray mt-3 w-2/5" />
+            </div>
+            <div className="flex w-full justify-evenly">
+                <button className="focus:bg-charcoal-gray p-2 focus:bg-opacity-25" onClick={handleExperienceItemClick}>Ironhack</button>
+                <button className="focus:bg-charcoal-gray p-2 focus:bg-opacity-25" onClick={handleExperienceItemClick}>Remy</button>
+                <button className="focus:bg-charcoal-gray p-2 focus:bg-opacity-25" onClick={handleExperienceItemClick}>Apple</button>
+            </div>
+            <div className="relative w-full">
+                <hr className={`absolute top-0 h-0.5 bg-charcoal-gray mt-2 transition-all ease-in-out duration-500 ${currentExperienceItemName === "remy" ? "w-[62%]" : currentExperienceItemName === "apple" ? "w-full" : "w-32"}`} />
+            </div>
+            <div className={`text-sm text-pretty flex flex-col gap-4 mt-10 transition-transform transform ease-in-out duration-500 ${animate ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+                {currentExperience && (
+                    <>
+                        <h2 className="font-bold text-xl">{currentExperience.title}</h2>
+                        <ul>
+                            <li>{currentExperience.firstDescription}</li>
+                            <li>{currentExperience.secondDescription}</li>
+                            <li>{currentExperience.thirdDescription}</li>
+                        </ul>
+                    </>
+                )}
+            </div>
+        </section>
+    );
+}
+
+export default ExperienceSection;
