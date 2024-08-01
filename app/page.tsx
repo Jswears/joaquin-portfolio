@@ -1,6 +1,7 @@
 import AboutMeSection from "@/components/AboutMe/AboutMeSection";
 import ExperienceSection from "@/components/Experience/ExperienceSection";
 import HomeSection from "@/components/Home/HomeSection";
+import ProjectsSection from "@/components/Projects/ProjectsSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HomeSection />
       <AboutMeSection />
       <ExperienceSection />
+      <ProjectsSection />
     </main>
   );
 }

@@ -2,15 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-    background-image: url('../public/gradientMobile.svg');
+  /* background-image: url('../public/gradientMobile.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; */
+
+  /*Dark gradient*/
+  /* background: linear-gradient(90deg, #28313b, #485461); */
+  /* Light gradient*/
+  background: linear-gradient(90deg, #f5f7fa, #c3cfe2);
 }
 
 section {
-    min-height: 100svh;
-    padding-top: 100px;
+  min-height: 100svh;
+  padding-top: 100px;
+}
+
+.card {
+  background-image: url("../public/unknownchronicles.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

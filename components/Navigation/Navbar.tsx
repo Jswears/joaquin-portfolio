@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <header
-            className={`h-[100px] p-6 fixed w-full transition-all duration-200 ease-in-out ${!showNavbar ? "-top-44 transition ease-in delay-75" : "top-0 transition ease-in delay-75 shadow-md"} ${navbarOffSet === 0 ? "bg-none shadow-none backdrop-blur-0" : 'backdrop-blur-sm'}`}
+            className={`h-[100px] p-6 fixed w-full transition-all duration-200 ease-in-out ${!showNavbar ? "-top-44 transition ease-in delay-75" : "top-0 transition ease-in delay-75 shadow-md"} ${navbarOffSet === 0 ? "bg-none shadow-none backdrop-blur-0" : 'backdrop-blur-sm z-50'}`}
             ref={navbarRef}
         >
             <nav className="flex justify-between items-center">
