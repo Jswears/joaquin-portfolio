@@ -28,7 +28,7 @@ const ExperienceSection: React.FC = () => {
     }, [currentExperience]);
 
     return (
-        <section className="px-6 dark:bg-black">
+        <section className="px-6 ">
             <div className="mb-10">
                 <h1 className="text-left text-[26px] font-bold tracking-[10px] ">2. Experience</h1>
                 <hr className="h-px border-charcoal-gray mt-3 w-2/5" />

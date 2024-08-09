@@ -1,7 +1,9 @@
 'use client';
+
 import useNavbarOffset from "@/hooks/useNavbarOffset";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ThemeToggle from "../theme-toggle";
 
 const Navbar = () => {
     const { navbarOffSet, navbarRef } = useNavbarOffset();
@@ -27,8 +29,11 @@ const Navbar = () => {
                 <div>
                     <h1 className="text-3xl">J</h1>
                 </div>
-                <div>
-                    <Image src="/menuLight.svg" alt="Joaquin Swears Logo" width={32} height={32} />
+                <div className="flex gap-8">
+                    <ThemeToggle />
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 50 50" className="fill-white">
+                        <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
+                    </svg>
                 </div>
             </nav>
         </header>

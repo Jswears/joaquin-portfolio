@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark body {
+  background: linear-gradient(90deg, #28313b, #485461);
+}
 body {
   /* background-image: url('../public/gradientMobile.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; */
 
-  /*Dark gradient*/
-  /* background: linear-gradient(90deg, #28313b, #485461); */
   /* Light gradient*/
   background: linear-gradient(90deg, #f5f7fa, #c3cfe2);
 }
