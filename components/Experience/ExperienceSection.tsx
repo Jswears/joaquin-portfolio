@@ -31,7 +31,7 @@ const ExperienceSection: React.FC = () => {
         <section className="px-6 ">
             <div className="mb-10">
                 <h1 className="text-left text-[26px] font-bold tracking-[10px] ">2. Experience</h1>
-                <hr className="h-px border-charcoal-gray mt-3 w-2/5" />
+                <hr className="h-px border-charcoal-gray dark:border-slate-300 mt-3 w-2/5" />
             </div>
             <div className="flex w-full justify-evenly">
                 <button className="focus:bg-charcoal-gray p-2 focus:bg-opacity-25" onClick={handleExperienceItemClick}>Ironhack</button>

@@ -1,9 +1,9 @@
 //TODO: Form submission to be added
 const ContactMeSection = () => {
     return (
-        <section className="contact-me-section px-6">
+        <section className="contact-me-section px-6" id="contact">
             <h1 className="text-left text-[26px] font-bold tracking-[10px] ">5.ContactMe</h1>
-            <hr className="h-px   border-charcoal-gray mt-3 w-2/5" />
+            <hr className="h-px   border-charcoal-gray mt-3 w-2/5 dark:bg-slate-300" />
             <div className="container mt-10">
                 <form action="">
                     <div className="flex flex-col gap-4">
@@ -19,7 +19,7 @@ const ContactMeSection = () => {
                             <label htmlFor="message">Message</label>
                             <textarea name="message" id="message" className=" rounded-lg bg-light-gray border border-charcoal-gray p-3 h-36"></textarea>
                         </div>
-                        <button className="bg-charcoal-gray text-white px-8 py-[14px] mt-4 rounded-md">Send Message</button>
+                        <button className="bg-charcoal-gray dark:border-slate-400 border text-white px-8 py-[14px] mt-4 rounded-md">Send Message</button>
                     </div>
                 </form>
             </div>

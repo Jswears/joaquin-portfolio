@@ -5,7 +5,7 @@ const AboutMeSection = () => {
         <section className="px-6">
             <div className="mb-10">
                 <h1 className="text-left text-[26px] font-bold tracking-[10px] ">1.AboutMe</h1>
-                <hr className="h-px   border-charcoal-gray mt-3 w-2/5" />
+                <hr className="h-px   border-charcoal-gray dark:border-slate-300 mt-3 w-2/5" />
             </div>
             <div className="text-sm text-pretty text- flex flex-col gap-4">
                 <p>Hello! My name is Joaquin, and I have a passion for creating innovative solutions and tackling complex problems. My journey into web development began in 2023 when I enrolled in the Full-Stack Web Developer Bootcamp at Ironhack. I discovered a deep enthusiasm for web development and thoroughly enjoyed the learning process.</p>
