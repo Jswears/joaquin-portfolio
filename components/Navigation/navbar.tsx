@@ -7,15 +7,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "../theme/theme-toggle"
 import { MobileMenu } from "./mobile-menu"
+import { navItems } from "@/lib/data"
 
-const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Certifications", href: "/#certifications" },
-    { name: "Contact", href: "/#contact" },
-    { name: "Blog", href: "/blog" },
-]
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
