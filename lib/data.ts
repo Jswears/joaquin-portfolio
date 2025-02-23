@@ -1,3 +1,5 @@
+import { Certification } from "@/types";
+
 // Projects
 export const projects = [
   {
@@ -52,31 +54,6 @@ export const projects = [
   },
 ];
 
-export const certifications = [
-  {
-    name: "Ironhack",
-    date: "July 23, 2022",
-    imageSrc: "/certifications/ironhack.svg",
-    description: "Full-Stack Web Developer Bootcamp at Ironhack",
-  },
-  {
-    name: "AWS Cloud Practitioner",
-    date: "August 23, 2023",
-    imageSrc: "/certifications/aws-certified-cloud-practitioner.png",
-    description: "AWS Cloud Practitioner Certification",
-    badgeLink:
-      "https://www.credly.com/badges/ba189bb0-eae5-4d61-ab1b-aa016b5e37b5/public_url",
-  },
-  {
-    name: "AWS Solutions Architect Associate",
-    date: "November 25, 2024",
-    imageSrc: "/certifications/aws-certified-solutions-architect-associate.png",
-    description: "AWS Solutions Architect Associate Certification",
-    badgeLink:
-      "https://www.credly.com/badges/3f9436ff-7de0-431c-8e33-659ce0896adb/public_url",
-  },
-];
-
 // Technologies
 export const technologies = [
   "AWS",
@@ -94,4 +71,32 @@ export const navItems = [
   { name: "Certifications", href: "/#certifications" },
   { name: "Contact", href: "/#contact" },
   { name: "Blog", href: "/blog" },
+];
+
+// Certifications
+
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    name: "Ironhack",
+    date: "23/07/2022",
+    imageSrc: "/certifications/ironhack.svg",
+    description: "Full-Stack Web Developer Bootcamp at Ironhack",
+  },
+  {
+    id: 2,
+    name: "AWS Cloud Practitioner",
+    date: "23/08/2023",
+    imageSrc: "/certifications/aws-certified-cloud-practitioner.png",
+    description: "AWS Cloud Practitioner Certification",
+    badgeLink:
+      "https://www.credly.com/badges/ba189bb0-eae5-4d61-ab1b-aa016b5e37b5/public_url",
+  },
+  {
+    id: 3,
+    name: "AWS Solutions Architect Associate",
+    date: "25/11/2024",
+    imageSrc: "/certifications/aws-certified-solutions-architect-associate.png",
+    description: "AWS Solutions Architect Associate Certification",
+  },
 ];

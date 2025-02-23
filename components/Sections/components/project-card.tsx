@@ -5,16 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, FileText } from "lucide-react"
-
-interface ProjectCardProps {
-    title: string
-    description: string
-    technologies: string[]
-    githubLink: string
-    externalLink: string
-    imageSrc: string
-    blogPostLink?: string
-}
+import { ProjectCardProps } from "@/types";
 
 export function ProjectCard({
     title,

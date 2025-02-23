@@ -1,11 +1,6 @@
-import type React from "react"
 import { Button } from "@/components/ui/button"
+import { FilterButtonsProps } from "@/types"
 
-interface FilterButtonsProps {
-    technologies: string[]
-    selectedTechnologies: string[]
-    toggleTechnology: (tech: string) => void
-}
 
 const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTechnologies, toggleTechnology }) => {
     return (

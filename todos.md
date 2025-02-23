@@ -1,0 +1,1 @@
+- [] Separate types to another document and by: component, core, etc.

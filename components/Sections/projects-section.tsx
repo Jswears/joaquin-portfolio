@@ -1,7 +1,8 @@
 import { SectionTitle } from "./components/section-title";
 import ProjectCardComponent from "./components/project-card-component";
 
-export function ProjectsSection() {
+
+const ProjectsSection = () => {
     return (
         <section id="projects" className="py-20">
             <div className="container mx-auto px-4">
@@ -12,3 +13,4 @@ export function ProjectsSection() {
     )
 }
 
+export default ProjectsSection;
