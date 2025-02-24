@@ -61,7 +61,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input className="border border-slate-800" placeholder="Your name" {...field} />
+                                <Input className="border border-slate-400" placeholder="Your name" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -74,7 +74,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="Your email" {...field} />
+                                <Input className="border-slate-400" placeholder="Your email" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -87,7 +87,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Your message" className="resize-none" {...field} />
+                                <Textarea placeholder="Your message" className="resize-none border-slate-400" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
