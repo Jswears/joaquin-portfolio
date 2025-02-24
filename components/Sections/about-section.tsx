@@ -8,7 +8,7 @@ const AboutSection = () => {
             <div className="container mx-auto px-4">
                 <SectionTitle number={1} title="About Me" />
                 <div className="lg:flex lg:items-center lg:gap-12">
-                    <div className="lg:flex-1 space-y-6 text-justify">
+                    <div className="lg:flex-1 space-y-12 text-justify">
                         <p>
                             Hello! My name is Joaquin. I have a passion for creating innovative solutions and tackling complex problems.
                             My journey into web development began in 2023 when I enrolled in the Full-Stack Web Developer Bootcamp at Ironhack.
@@ -22,8 +22,8 @@ const AboutSection = () => {
                             Recently, I earned my AWS Solutions Architect Associate certification. I have been continuously enhancing my skills through various courses
                             in containerization, computer science, and other relevant areas.
                         </p>
-                        <div className="pt-6 border-t border-border border-slate-500">
-                            <p className="font-semibold mb-4">Here are a few technologies I&apos;ve been working with recently:</p>
+                        <div className=" border-t border-border border-slate-500">
+                            <p className="mt-12 font-semibold mb-4">Here are a few technologies I&apos;ve been working with recently:</p>
                             <ul className="grid grid-cols-2 gap-2 list-disc list-inside">
                                 {technologies.map((tech) => (
                                     <li key={tech.id}>{tech.name}</li>
