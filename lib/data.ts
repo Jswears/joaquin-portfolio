@@ -102,5 +102,7 @@ export const certifications: Certification[] = [
     date: "25/11/2024",
     imageSrc: "/certifications/aws-certified-solutions-architect-associate.png",
     description: "AWS Solutions Architect Associate Certification",
+    badgeLink:
+      "https://www.credly.com/badges/3f9436ff-7de0-431c-8e33-659ce0896adb/public_url",
   },
 ];
