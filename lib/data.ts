@@ -19,7 +19,7 @@ export const projects = [
     technologies: ["TypeScript", "React", "Node.js"],
     githubLink: "https://github.com/yourusername/task-manager-pro",
     externalLink: "https://task-manager-pro.example.com",
-    imageSrc: "/projects/task-manager.webp",
+    imageSrc: "/projects/unknown-chronicles.webp",
     blogPostLink: "/blog/task-manager-pro",
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     technologies: ["AWS", "TypeScript", "React Native"],
     githubLink: "https://github.com/yourusername/fitness-tracker",
     externalLink: "https://fitness-tracker.example.com",
-    imageSrc: "/projects/fitness-tracker.webp",
+    imageSrc: "/projects/unknown-chronicles.webp",
     blogPostLink: "/blog/fitness-tracker",
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
     technologies: ["JavaScript", "React", "Next.js", "Node.js"],
     githubLink: "https://github.com/yourusername/e-commerce-shop",
     externalLink: "https://ecommerce-shop.example.com",
-    imageSrc: "/projects/e-commerce.webp",
+    imageSrc: "/projects/unknown-chronicles.webp",
     blogPostLink: "/blog/e-commerce-shop",
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     technologies: ["JavaScript", "React", "API"],
     githubLink: "https://github.com/yourusername/recipe-finder",
     externalLink: "https://recipe-finder.example.com",
-    imageSrc: "/projects/recipe-finder.webp",
+    imageSrc: "/projects/unknown-chronicles.webp",
     blogPostLink: "/blog/recipe-finder",
   },
 ];
