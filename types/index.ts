@@ -6,3 +6,8 @@ export interface Certification {
   description: string;
   badgeLink?: string;
 }
+
+export interface Technologies {
+  id: number;
+  name: string;
+}
