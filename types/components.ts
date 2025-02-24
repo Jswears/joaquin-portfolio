@@ -1,4 +1,4 @@
-import { Technologies } from ".";
+import { Technology } from ".";
 
 export interface SectionTitleProps {
   number: number;
@@ -16,9 +16,9 @@ export interface CertificationCardProps {
 
 // Project Section
 export interface FilterButtonsProps {
-  technologies: Technologies[];
-  selectedTechnologies: Technologies[];
-  toggleTechnology: (tech: string) => void;
+  technologies: Technology[];
+  selectedTechnologies: Technology[];
+  toggleTechnology: (tech: Technology) => void;
 }
 
 export interface ProjectCardProps {

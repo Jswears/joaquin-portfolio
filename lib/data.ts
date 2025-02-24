@@ -1,4 +1,4 @@
-import { Certification, Technologies } from "@/types";
+import { Certification, Technology } from "@/types";
 
 // Projects
 export const projects = [
@@ -55,12 +55,16 @@ export const projects = [
 ];
 
 // Technologies
-export const technologies: Technologies[] = [
+export const technologies: Technology[] = [
   { id: 1, name: "AWS" },
   { id: 2, name: "React" },
   { id: 3, name: "JavaScript" },
   { id: 4, name: "TypeScript" },
   { id: 5, name: "Docker" },
+  { id: 6, name: "Node.js" },
+  { id: 7, name: "React Native" },
+  { id: 8, name: "Next.js" },
+  { id: 9, name: "API" },
 ];
 
 // Navigation
