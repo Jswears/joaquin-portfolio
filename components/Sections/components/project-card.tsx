@@ -16,7 +16,7 @@ const ProjectCard = ({ title,
     imageSrc,
     blogPostLink, }: ProjectCardProps) => {
     return (
-        <Card className="overflow-hidden bg-neutral shadow-2xl">
+        <Card className="bg-background/30 shadow-lg">
             <CardHeader className="p-0">
                 <div className="relative h-48">
                     <Image
