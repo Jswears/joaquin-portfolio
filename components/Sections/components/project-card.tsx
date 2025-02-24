@@ -33,7 +33,7 @@ const ProjectCard = ({ title,
                 <p className="text-muted-foreground mb-4 font-ibm-plex-mono">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                     {technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary">
+                        <Badge key={tech} variant="secondary" className="px-2 py-1 text-sm">
                             {tech}
                         </Badge>
                     ))}

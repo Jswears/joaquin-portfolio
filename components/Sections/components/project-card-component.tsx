@@ -4,19 +4,26 @@ import type React from "react"
 import FilterButtons from "./filter-buttons"
 import ProjectCard from "./project-card";
 import { projects, technologies } from "@/lib/data";
-
-
+import { Technology } from "@/types";
 
 const ProjectCardComponent: React.FC = () => {
-    const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([])
+    const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([])
 
-    const toggleTechnology = (tech: string) => {
-        setSelectedTechnologies((prev) => (prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]))
+    const toggleTechnology = (tech: Technology) => {
+        setSelectedTechnologies((prev) =>
+            prev.some((t) => t.id === tech.id)
+                ? prev.filter((t) => t.id !== tech.id)
+                : [...prev, tech]
+        )
     }
 
     const filterProjects = () => {
         if (selectedTechnologies.length === 0) return projects
-        return projects.filter((project) => selectedTechnologies.every((tech) => project.technologies.includes(tech)))
+        return projects.filter((project) =>
+            selectedTechnologies.every((tech) =>
+                project.technologies.includes(tech.name)
+            )
+        )
     }
 
     const filteredProjects = filterProjects()
