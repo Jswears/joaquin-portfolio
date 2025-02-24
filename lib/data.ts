@@ -74,7 +74,7 @@ export const navItems = [
   { name: "Projects", href: "/#projects" },
   { name: "Certifications", href: "/#certifications" },
   { name: "Contact", href: "/#contact" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
 ];
 
 // Certifications
@@ -104,5 +104,25 @@ export const certifications: Certification[] = [
     description: "AWS Solutions Architect Associate Certification",
     badgeLink:
       "https://www.credly.com/badges/3f9436ff-7de0-431c-8e33-659ce0896adb/public_url",
+  },
+];
+
+// Social Media
+export const socialMedia = [
+  {
+    name: "GitHub",
+    icon: "Github",
+    href: "https://github.com/Jswears",
+  },
+
+  {
+    name: "LinkedIn",
+    icon: "Linkedin",
+    href: "https://www.linkedin.com/in/joaquin-ignacio-swears-salinas-9a4947284/",
+  },
+  {
+    name: "Email",
+    icon: "Mail",
+    href: "joaquinsw.salinas@gmail.com",
   },
 ];

@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Montserrat, Merriweather } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import Navbar from "@/components/Navigation/navbar"
+import Footer from "@/components/Layout/footer"
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
@@ -39,12 +40,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${ibmPlexMono.variable} ${montserrat.variable} ${merriWeather.variable} text-charcoal-gray dark:text-off-white font-ibmPlexMono  antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main className="min-h-screen pt-16">{children}
-          </main>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="min-h-screen pt-16">{children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
   )
 }
+
+
 
