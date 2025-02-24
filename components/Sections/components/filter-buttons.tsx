@@ -36,7 +36,7 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTec
                                     toggleTechnology(tech)
                                     setShowAll(false)
                                 }}
-                                className={`${selectedTechnologies.includes(tech) ? "bg-gray-800 text-white" : "bg-white text-gray-800"} rounded-none border-b p-1 mb-1`}
+                                className={`${selectedTechnologies.includes(tech) ? "bg-gray-800 text-white" : "bg-white text-gray-800"} border-b p-1 mb-1`}
                             >
                                 {tech.name}
                             </DropdownMenuItem>
