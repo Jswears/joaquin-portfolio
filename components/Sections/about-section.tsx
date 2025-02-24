@@ -23,7 +23,7 @@ const AboutSection = () => {
                             in containerization, computer science, and other relevant areas.
                         </p>
                         <div className="pt-6 border-t border-border border-slate-500">
-                            <p className="font-semibold mb-4">Here are a few technologies I've been working with recently:</p>
+                            <p className="font-semibold mb-4">Here are a few technologies I&apos;ve been working with recently:</p>
                             <ul className="grid grid-cols-2 gap-2 list-disc list-inside">
                                 {technologies.map((tech) => (
                                     <li key={tech.id}>{tech.name}</li>
