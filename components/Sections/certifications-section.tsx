@@ -1,5 +1,5 @@
 import { certifications } from "@/lib/data"
-import { SectionTitle } from "./components/section-title"
+import SectionTitle from "./components/section-title"
 import CertificationCard from "./components/certification-card";
 
 const CertificationsSection = () => {

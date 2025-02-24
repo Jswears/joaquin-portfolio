@@ -2,7 +2,7 @@
 import { useState } from "react"
 import type React from "react"
 import FilterButtons from "./filter-buttons"
-import { ProjectCard } from "./project-card";
+import ProjectCard from "./project-card";
 import { projects, technologies } from "@/lib/data";
 
 

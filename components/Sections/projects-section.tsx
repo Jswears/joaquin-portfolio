@@ -1,4 +1,4 @@
-import { SectionTitle } from "./components/section-title";
+import SectionTitle from "./components/section-title";
 import ProjectCardComponent from "./components/project-card-component";
 
 

@@ -11,7 +11,7 @@ interface MobileMenuProps {
     navItems: { name: string; href: string }[]
 }
 
-export function MobileMenu({ navItems }: MobileMenuProps) {
+const MobileMenu = ({ navItems }: MobileMenuProps) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -36,3 +36,4 @@ export function MobileMenu({ navItems }: MobileMenuProps) {
     )
 }
 
+export default MobileMenu;

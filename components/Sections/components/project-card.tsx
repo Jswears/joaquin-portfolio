@@ -5,17 +5,16 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, FileText } from "lucide-react"
-import { ProjectCardProps } from "@/types";
+import { ProjectCardProps } from "@/types/components";
 
-export function ProjectCard({
-    title,
+
+const ProjectCard = ({ title,
     description,
     technologies,
     githubLink,
     externalLink,
     imageSrc,
-    blogPostLink,
-}: ProjectCardProps) {
+    blogPostLink, }: ProjectCardProps) => {
     return (
         <Card className="overflow-hidden">
             <CardHeader className="p-0">
@@ -65,4 +64,6 @@ export function ProjectCard({
         </Card>
     )
 }
+
+export default ProjectCard;
 

@@ -6,11 +6,10 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "../theme/theme-toggle"
-import { MobileMenu } from "./mobile-menu"
+import MobileMenu from "./mobile-menu"
 import { navItems } from "@/lib/data"
 
-
-export function Navbar() {
+const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname()
 
@@ -56,4 +55,7 @@ export function Navbar() {
         </header>
     )
 }
+
+export default Navbar;
+
 

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SectionTitle } from "./components/section-title"
+import SectionTitle from "./components/section-title"
 
 const AboutSection = () => {
     return (
