@@ -16,15 +16,15 @@ const ProjectCard = ({ title,
     imageSrc,
     blogPostLink, }: ProjectCardProps) => {
     return (
-        <Card className="overflow-hidden">
+        <Card className="overflow-hidden bg-neutral shadow-2xl">
             <CardHeader className="p-0">
                 <div className="relative h-48">
                     <Image
-                        src={imageSrc || "/placeholder.svg"}
+                        src={imageSrc || "/projects/unknownchronicles.webp"}
                         alt={title}
-                        layout="fill"
-                        objectFit="cover"
-                        className="transition-transform duration-300 hover:scale-105"
+                        width={500}
+                        height={500}
+                        className="transition-transform duration-300 hover:scale-105 h-full w-full object-cover object-bottom"
                     />
                 </div>
             </CardHeader>
@@ -39,7 +39,7 @@ const ProjectCard = ({ title,
                     ))}
                 </div>
             </CardContent>
-            <CardFooter className="flex justify-between">
+            <CardFooter className="flex flex-wrap gap-2 justify-center sm:justify-between">
                 <Button variant="outline" size="sm" asChild>
                     <Link href={githubLink} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
@@ -61,6 +61,7 @@ const ProjectCard = ({ title,
                     </Button>
                 )}
             </CardFooter>
+
         </Card>
     )
 }
