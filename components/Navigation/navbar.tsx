@@ -14,6 +14,10 @@ const Navbar = () => {
     const [activeSection, setActiveSection] = useState("")
     const pathname = usePathname()
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50)
@@ -42,9 +46,9 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between h-16">
-                    <Link href="/" className="text-2</Button>xl font-bold font-merriweather">
+                    <button onClick={scrollToTop} className="text-2xl font-bold font-merriweather">
                         JS
-                    </Link>
+                    </button>
                     <div className="hidden md:flex items-center space-x-4">
                         {navItems.map((item) => {
                             let isActive = false

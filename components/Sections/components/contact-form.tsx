@@ -10,23 +10,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
 import axios from "axios"
-
+import { Loader2 } from "lucide-react"
 
 // API URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const formSchema = z.object({
-    name: z.string().min(2, {
-        message: "Name must be at least 2 characters.",
-    }),
-    email: z.string().email({
-        message: "Please enter a valid email address.",
-    }),
-    message: z.string().min(10, {
-        message: "Message must be at least 10 characters.",
-    }),
+    name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+    email: z.string().email({ message: "Please enter a valid email address." }),
+    message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 })
-
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -46,12 +39,7 @@ const ContactForm = () => {
             const response = await axios.post(`${API_URL}/contact`, values)
             if (response.status === 200) {
                 form.reset()
-                toast("Message sent successfully!", {
-                    duration: 5000,
-                    style: {
-                        backgroundColor: "#98FB98",
-                        color: "#000000",
-                    },
+                toast.success("Message sent successfully!", {
                     description: "I'll get back to you as soon as possible.",
                 })
             } else {
@@ -59,14 +47,7 @@ const ContactForm = () => {
             }
         } catch (error) {
             console.error(error)
-            toast("An error occurred. Please try again later.", {
-                duration: 5000,
-                style: {
-                    backgroundColor: "#E57373",
-                    color: "#000000",
-                }
-            })
-
+            toast.error("An error occurred. Please try again later.")
         } finally {
             setIsSubmitting(false)
         }
@@ -74,7 +55,7 @@ const ContactForm = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-background/50 p-6 rounded-lg shadow-lg">
                 <FormField
                     control={form.control}
                     name="name"
@@ -82,7 +63,11 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input className="border border-slate-400" placeholder="Your name" {...field} />
+                                <Input
+                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow"
+                                    placeholder="Your name"
+                                    {...field}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -95,7 +80,11 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input className="border-slate-400" placeholder="Your email" {...field} />
+                                <Input
+                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow"
+                                    placeholder="Your email"
+                                    {...field}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -108,18 +97,23 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Your message" className="resize-none border-slate-400" {...field} />
+                                <Textarea
+                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow resize-none"
+                                    placeholder="Your message"
+                                    rows={5}
+                                    {...field}
+                                />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                <Button type="submit" disabled={isSubmitting} className="w-full">
+                    {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : "Send Message"}
                 </Button>
             </form>
         </Form>
     )
 }
 
-export default ContactForm;
+export default ContactForm
