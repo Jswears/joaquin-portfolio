@@ -1,13 +1,13 @@
 import { certifications } from "@/lib/data"
 import SectionTitle from "./components/section-title"
-import CertificationCard from "./components/certification-card";
+import CertificationCard from "./components/certification-card"
 
 const CertificationsSection = () => {
     return (
-        <section id="certifications" className="py-20 bg-dark-charcoal">
-            <div className="container mx-auto px-4">
+        <section id="certifications" className="py-24">
+            <div className="container mx-auto px-6">
                 <SectionTitle number={3} title="Certifications" />
-                <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {certifications.map((cert) => (
                         <CertificationCard key={cert.name} {...cert} />
                     ))}
@@ -17,4 +17,4 @@ const CertificationsSection = () => {
     )
 }
 
-export default CertificationsSection;
+export default CertificationsSection
