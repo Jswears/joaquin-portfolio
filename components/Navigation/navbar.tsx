@@ -11,42 +11,90 @@ import { navItems } from "@/lib/data"
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
+    const [activeSection, setActiveSection] = useState("")
     const pathname = usePathname()
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0)
+            setIsScrolled(window.scrollY > 50)
+            if (pathname === "/") {
+                const sections = document.querySelectorAll("section[id]")
+                let current = ""
+                sections.forEach((section) => {
+                    const rect = section.getBoundingClientRect()
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        current = `#${section.id}`
+                    }
+                })
+                setActiveSection(current || "#about")
+            }
         }
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+    }, [pathname])
 
     return (
         <header
             className={cn(
                 "fixed top-0 w-full z-50 transition-all duration-300",
-                isScrolled ? "bg-background/15 backdrop-blur-sm shadow-sm" : "bg-transparent",
+                isScrolled ? "bg-background/15 backdrop-blur-sm shadow-sm" : "bg-transparent"
             )}
         >
             <div className="container mx-auto px-4">
                 <nav className="flex items-center justify-between h-16">
-                    <Link href="/" className="text-2xl font-bold font-merriweather">
+                    <Link href="/" className="text-2</Button>xl font-bold font-merriweather">
                         JS
                     </Link>
                     <div className="hidden md:flex items-center space-x-4">
-                        {navItems.map((item) => (
-                            <Button key={item.name} variant="ghost" asChild>
-                                <Link
-                                    href={item.href}
-                                    className={cn(
-                                        "transition-colors hover:text-primary",
-                                        pathname === item.href ? "text-primary" : "text-muted-foreground",
-                                    )}
-                                >
-                                    {item.name}
-                                </Link>
-                            </Button>
-                        ))}
+                        {navItems.map((item) => {
+                            let isActive = false
+                            if (pathname !== "/") {
+                                if (item.href) {
+                                    isActive = pathname === item.href
+                                }
+                            } else {
+                                if (item.target) {
+                                    isActive = activeSection === `#${item.target}`
+                                }
+                            }
+                            if (item.href) {
+                                return (
+                                    <Button key={item.name} variant="ghost" asChild>
+                                        <Link
+                                            href={item.href}
+                                            className={cn(
+                                                "transition-colors hover:text-primary",
+                                                isActive ? "text-primary font-semibold" : "text-muted-foreground"
+                                            )}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </Button>
+                                )
+                            } else if (item.target) {
+                                return (
+                                    <Button key={item.name} variant="ghost" asChild>
+                                        <a
+                                            href={`#${item.target}`}
+                                            onClick={(e) => {
+                                                e.preventDefault()
+                                                const element = document.getElementById(item.target)
+                                                if (element) {
+                                                    element.scrollIntoView({ behavior: "smooth", block: "start" })
+                                                    setActiveSection(`#${item.target}`)
+                                                }
+                                            }}
+                                            className={cn(
+                                                "transition-colors hover:text-primary cursor-pointer",
+                                                isActive ? "text-primary font-semibold" : "text-muted-foreground"
+                                            )}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    </Button>
+                                )
+                            }
+                        })}
                         <ThemeToggle />
                     </div>
                     <MobileMenu navItems={navItems} />
@@ -56,6 +104,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
-
-
+export default Navbar

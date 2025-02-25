@@ -69,12 +69,11 @@ export const technologies: Technology[] = [
 
 // Navigation
 export const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Certifications", href: "/#certifications" },
-  { name: "Contact", href: "/#contact" },
-  // { name: "Blog", href: "/blog" },
+  { name: "About", target: "about" },
+  { name: "Projects", target: "projects" },
+  { name: "Certifications", target: "certifications" },
+  { name: "Contact", target: "contact" },
+  { name: "Blog", href: "/blog" },
 ];
 
 // Certifications
