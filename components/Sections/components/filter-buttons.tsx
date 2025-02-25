@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { FilterButtonsProps } from "@/types/components"
@@ -8,15 +9,14 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTec
     const visibleTechnologies = showAll ? technologies : technologies.slice(0, 5)
 
     return (
-        <div className="flex flex-wrap gap-2 my-6">
+        <div className="flex flex-wrap gap-3 my-6 justify-center">
             {visibleTechnologies.map((tech) => (
                 <Button
                     key={tech.id}
                     onClick={() => toggleTechnology(tech)}
-                    variant={selectedTechnologies.includes(tech) ? "secondary" : "outline"}
+                    variant={selectedTechnologies.includes(tech) ? "default" : "outline"}
                     size="sm"
-                    className={`${selectedTechnologies.includes(tech) ? "bg-gray-800 text-white" : "bg-white text-gray-800 border-gray-800"
-                        } hover:bg-gray-900 hover:text-white`}
+                    className="transition-all duration-200"
                 >
                     {tech.name}
                 </Button>
@@ -36,7 +36,7 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTec
                                     toggleTechnology(tech)
                                     setShowAll(false)
                                 }}
-                                className={`${selectedTechnologies.includes(tech) ? "bg-gray-800 text-white" : "bg-white text-gray-800"} border-b p-1 mb-1`}
+                                className={`${selectedTechnologies.includes(tech) ? "bg-white text-gray-800" : "bg-gray-800 text-white"} border-b p-1 mb-1 transition-all duration-200`}
                             >
                                 {tech.name}
                             </DropdownMenuItem>
