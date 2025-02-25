@@ -9,6 +9,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
+import axios from "axios"
+
+
+// API URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const formSchema = z.object({
     name: z.string().min(2, {
@@ -35,20 +40,35 @@ const ContactForm = () => {
         },
     })
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        setIsSubmitting(true)
-        // Here you would typically send the form data to your backend
-        console.log(values)
-        setTimeout(() => {
-            setIsSubmitting(false)
-            toast(
-                "Your message has been sent! I'll get back to you as soon as possible.",
-                {
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        try {
+            setIsSubmitting(true)
+            const response = await axios.post(`${API_URL}/contact`, values)
+            if (response.status === 200) {
+                form.reset()
+                toast("Message sent successfully!", {
                     duration: 5000,
+                    style: {
+                        backgroundColor: "#98FB98",
+                        color: "#000000",
+                    }
+                })
+            } else {
+                throw new Error("An unknown error occurred.")
+            }
+        } catch (error) {
+            console.error(error)
+            toast("An error occurred. Please try again later.", {
+                duration: 5000,
+                style: {
+                    backgroundColor: "#E57373",
+                    color: "#000000",
                 }
-            )
-            form.reset()
-        }, 1000)
+            })
+
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (

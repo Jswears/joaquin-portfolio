@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import Navbar from "@/components/Navigation/navbar"
 import Footer from "@/components/Layout/footer"
+import { Toaster } from "@/components/ui/sonner"
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
@@ -42,10 +43,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="min-h-screen pt-16">{children}
-            </main>
+            <main className="min-h-screen pt-16">{children}</main>
             <Footer />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
