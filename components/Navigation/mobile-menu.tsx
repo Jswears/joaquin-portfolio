@@ -22,14 +22,16 @@ const MobileMenu = ({ navItems }: MobileMenuProps) => {
                     <span className="sr-only">Toggle menu</span>
                 </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-                <nav className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="bg-charcoal-gray mobile-nav">
+                <nav className="flex flex-col space-y-4 mt-8 p-4 justify-start items-start">
                     {navItems.map((item) => (
                         <Button key={item.name} variant="ghost" asChild onClick={() => setIsOpen(false)}>
                             <Link href={item.href}>{item.name}</Link>
                         </Button>
                     ))}
-                    <ThemeToggle />
+                    <div className="flex justify-end w-full space-x-4 mt-12 ">
+                        <ThemeToggle />
+                    </div>
                 </nav>
             </SheetContent>
         </Sheet>
