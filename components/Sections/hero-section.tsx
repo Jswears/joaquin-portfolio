@@ -4,49 +4,55 @@ import { Button } from "@/components/ui/button"
 
 const HeroSection = () => {
     return (
-        <section className="flex flex-col justify-evenly py-12 lg:py-24" id="hero">
-            <div className="container mx-auto px-4 flex flex-col justify-center items-center gap-8">
-                <div className="flex flex-col gap-2">
-                    <p className="text-lg lg:text-2xl mb-2">Hi, I am</p>
-                    <h1 className="text-4xl lg:text-7xl font-bold">Joaquin Swears</h1>
-                    <p className="text-sm lg:text-lg text-gray-400 font-semibold">Software Developer & Solutions Architect</p>
-                    <p className="text-lg lg:text-xl">Crafting efficient solutions with code and cloud.</p>
+        <section className="flex flex-col justify-center items-center text-left py-16 lg:py-28" id="hero">
+            <div className="container mx-auto px-6 flex flex-col items-center gap-10">
+                <div className="space-y-4 lg:space-y-6">
+                    <p className="text-lg lg:text-2xl text-muted-foreground">Hi, I am</p>
+                    <h1 className="text-4xl lg:text-7xl font-bold text-primary">Joaquin Swears</h1>
+                    <p className="text-lg lg:text-xl font-medium text-gray-400">Software Developer & Solutions Architect</p>
+                    <p className="text-lg lg:text-xl text-muted-foreground">
+                        Crafting efficient solutions with <span className="text-primary font-semibold">code</span> and <span className="text-primary font-semibold">cloud</span>.
+                    </p>
                 </div>
-                <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8 w-full max-w-md">
-                    <Button asChild variant="default" size="lg" className="w-full">
+
+                <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full max-w-sm">
+                    <Button asChild variant="default" size="lg" className="w-full shadow-md transition-transform hover:scale-105">
                         <Link href="#projects">View Work</Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="w-full">
+                    <Button asChild variant="outline" size="lg" className="w-full shadow-md transition-transform hover:scale-105">
                         <Link href="#contact">Contact Me</Link>
                     </Button>
                 </div>
             </div>
-            <div className="badges-container border-y dark:border-slate-800 f border-slate-200 w-full p-4 flex gap-8 justify-center md:mt-12 items-center shadow-lg">
-                <div className="container mx-auto px-4 flex gap-8 justify-center items-center">
+
+            <div className="border-y border-border w-full py-6 flex justify-center shadow-lg dark:border-slate-800 f border-slate-200 mt-10">
+                <div className="container mx-auto px-6 flex flex-wrap gap-10 justify-center items-center">
                     <Link
                         href="https://www.credly.com/badges/ba189bb0-eae5-4d61-ab1b-aa016b5e37b5/public_url"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex items-center justify-center transition-transform hover:scale-110"
                     >
                         <Image
                             src="/certifications/aws-certified-cloud-practitioner.png"
                             alt="AWS Certified Cloud Practitioner"
                             width={96}
                             height={96}
-                            className="h-20 w-20 lg:h-24 lg:w-24 transition-transform hover:scale-105"
+                            className="h-20 w-20 lg:h-24 lg:w-24"
                         />
                     </Link>
                     <Link
                         href="https://www.credly.com/badges/3f9436ff-7de0-431c-8e33-659ce0896adb/public_url"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex items-center justify-center transition-transform hover:scale-110"
                     >
                         <Image
                             src="/certifications/aws-certified-solutions-architect-associate.png"
                             alt="AWS Certified Solutions Architect Associate"
                             width={96}
                             height={96}
-                            className="h-20 w-20 lg:h-24 lg:w-24 transition-transform hover:scale-105"
+                            className="h-20 w-20 lg:h-24 lg:w-24"
                         />
                     </Link>
                 </div>
@@ -56,4 +62,3 @@ const HeroSection = () => {
 }
 
 export default HeroSection
-

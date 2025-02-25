@@ -44,7 +44,7 @@ const AboutSection = () => {
                             alt="Joaquin Swears"
                             width={400}
                             height={400}
-                            className="transition-transform duration-300 hover:scale-105"
+                            className="transition-transform duration-300 hover:scale-105 mb-6 lg:mb-0"
                         />
                     </div>
                 </div>
