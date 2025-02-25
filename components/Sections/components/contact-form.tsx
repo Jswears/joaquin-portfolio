@@ -51,7 +51,8 @@ const ContactForm = () => {
                     style: {
                         backgroundColor: "#98FB98",
                         color: "#000000",
-                    }
+                    },
+                    description: "I'll get back to you as soon as possible.",
                 })
             } else {
                 throw new Error("An unknown error occurred.")
