@@ -37,6 +37,10 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [pathname])
 
+    if (pathname === "/blog") {
+        return null;
+    }
+
     return (
         <header
             className={cn(
