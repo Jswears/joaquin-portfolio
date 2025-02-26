@@ -16,9 +16,9 @@ const Footer = () => {
                         {socialMedia.map((item) => (
                             <Link
                                 key={item.name}
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href={item.icon === "Mail" ? `mailto:${item.href}` : item.href}
+                                target={item.icon === "Mail" ? "_self" : "_blank"}
+                                rel={item.icon === "Mail" ? undefined : "noopener noreferrer"}
                                 className="text-lg text-muted-foreground hover:text-primary"
                             >
                                 {item.icon === "Github" && <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />}
