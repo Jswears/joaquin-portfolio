@@ -17,7 +17,7 @@ const ProjectCard = ({
     blogPostLink,
 }: ProjectCardProps) => {
     return (
-        <Card className="bg-background/40 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
+        <Card className="flex flex-col justify-between bg-background/40 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
             <CardHeader className="p-0">
                 <div className="relative h-52">
                     <Image
