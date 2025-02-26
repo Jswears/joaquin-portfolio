@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -10,10 +10,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
 import axios from "axios"
+
+// Declare grecaptcha as a global variable
+declare const grecaptcha: any
 import { Loader2 } from "lucide-react"
 
-// API URL
+// API URL & reCAPTCHA Key from ENV
 const API_URL = process.env.NEXT_PUBLIC_API_URL
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 const formSchema = z.object({
     name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -33,10 +37,32 @@ const ContactForm = () => {
         },
     })
 
+    useEffect(() => {
+        // Load reCAPTCHA script
+        const script = document.createElement("script")
+        script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
+        script.async = true
+        script.defer = true
+        document.body.appendChild(script)
+    }, [])
+
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             setIsSubmitting(true)
-            const response = await axios.post(`${API_URL}/contact`, values)
+
+            // Execute reCAPTCHA
+            const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
+
+            if (!recaptchaToken) {
+                throw new Error("Failed to verify reCAPTCHA. Please try again.")
+            }
+
+            // Send form data with reCAPTCHA token
+            const response = await axios.post(`${API_URL}/contact`, {
+                ...values,
+                recaptchaToken, // Include reCAPTCHA token
+            })
+
             if (response.status === 200) {
                 form.reset()
                 toast.success("Message sent successfully!", {
@@ -63,11 +89,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input
-                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow"
-                                    placeholder="Your name"
-                                    {...field}
-                                />
+                                <Input className="border border-border focus:ring-primary focus:border-primary transition-shadow" placeholder="Your name" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -80,11 +102,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input
-                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow"
-                                    placeholder="Your email"
-                                    {...field}
-                                />
+                                <Input className="border border-border focus:ring-primary focus:border-primary transition-shadow" placeholder="Your email" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -97,12 +115,7 @@ const ContactForm = () => {
                         <FormItem>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <Textarea
-                                    className="border border-border focus:ring-primary focus:border-primary transition-shadow resize-none"
-                                    placeholder="Your message"
-                                    rows={5}
-                                    {...field}
-                                />
+                                <Textarea className="border border-border focus:ring-primary focus:border-primary transition-shadow resize-none" placeholder="Your message" rows={5} {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
