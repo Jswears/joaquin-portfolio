@@ -12,7 +12,9 @@ import { toast } from "sonner"
 import axios from "axios"
 
 // Declare grecaptcha as a global variable
-declare const grecaptcha: any
+declare const grecaptcha: {
+    execute(siteKey: string, options: { action: string }): Promise<string>
+}
 import { Loader2 } from "lucide-react"
 
 // API URL & reCAPTCHA Key from ENV
@@ -51,6 +53,9 @@ const ContactForm = () => {
             setIsSubmitting(true)
 
             // Execute reCAPTCHA
+            if (!RECAPTCHA_SITE_KEY) {
+                throw new Error("reCAPTCHA site key is not defined.")
+            }
             const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
 
             if (!recaptchaToken) {
