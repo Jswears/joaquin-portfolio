@@ -1,8 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import HeroButton from "./components/hero-btn";
 
 const HeroSection = () => {
+
+
     return (
         <section className="flex flex-col justify-center items-center text-left py-16 lg:py-28" id="hero">
             <div className="container mx-auto px-6 flex flex-col items-center gap-10">
@@ -16,12 +18,8 @@ const HeroSection = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full max-w-sm">
-                    <Button asChild variant="default" size="lg" className="w-full shadow-md transition-transform hover:scale-105">
-                        <Link href="#projects">View Work</Link>
-                    </Button>
-                    <Button asChild variant="outline" size="lg" className="w-full shadow-md transition-transform hover:scale-105">
-                        <Link href="#contact">Contact Me</Link>
-                    </Button>
+                    <HeroButton title="View Work" variant="default" sectionId="projects" />
+                    <HeroButton title="Contact Me" variant="outline" sectionId="contact" />
                 </div>
             </div>
 
