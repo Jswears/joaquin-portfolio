@@ -37,7 +37,7 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [pathname])
 
-    if (pathname === "/blog") {
+    if (pathname.includes("/admin") || pathname.includes("/blog")) {
         return null;
     }
 

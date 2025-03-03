@@ -1,0 +1,19 @@
+# Welcome to My Test Post 🎉
+
+This is a test MDX blog post fetched from **AWS S3** and rendered dynamically in **Next.js**.
+
+## 🔥 Features Covered
+
+- Fetching MDX from S3 with pre-signed URLs
+- Extracting metadata using **DynamoDB**
+- Rendering MDX dynamically in **Next.js**
+
+## 📌 Code Example
+
+Here's an example of how we fetch MDX content:
+
+```tsx
+const { metadata, content } = await getMDXFromS3(
+  "https://s3.amazonaws.com/your-bucket/test-post.mdx"
+);
+```

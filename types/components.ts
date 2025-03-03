@@ -30,3 +30,18 @@ export interface ProjectCardProps {
   imageSrc: string;
   blogPostLink?: string;
 }
+
+//Blogs
+export interface MetadataInputProps {
+  metadata: { title: string; tags: string; category: string };
+  setMetadata: (metadata: {
+    title: string;
+    tags: string;
+    category: string;
+  }) => void;
+}
+
+export interface ThumbnailUploaderProps {
+  onUploadSuccess: (url: string) => void;
+  BASE_URL: string;
+}
