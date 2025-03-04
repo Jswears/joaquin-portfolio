@@ -12,9 +12,9 @@ const CertificationCard = ({ imageSrc, name, description, badgeLink, date }: Cer
                     <Image
                         src={imageSrc || "/placeholder.svg"}
                         alt={name}
-                        width={64}
-                        height={64}
-                        className="rounded-lg shadow-md"
+                        width={600}
+                        height={600}
+                        className="h-16 w-fit rounded-lg shadow-md"
                     />
                     <div>
                         <h3 className="text-lg font-bold text-primary">{name}</h3>

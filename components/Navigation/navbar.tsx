@@ -82,7 +82,7 @@ const Navbar = () => {
                                             href={`#${item.target}`}
                                             onClick={(e) => {
                                                 e.preventDefault()
-                                                const element = document.getElementById(item.target)
+                                                const element = item.target ? document.getElementById(item.target) : null
                                                 if (element) {
                                                     element.scrollIntoView({ behavior: "smooth", block: "start" })
                                                     setActiveSection(`#${item.target}`)

@@ -58,22 +58,25 @@ export const projects = [
 export const technologies: Technology[] = [
   { id: 1, name: "AWS" },
   { id: 2, name: "React" },
-  { id: 3, name: "JavaScript" },
   { id: 4, name: "TypeScript" },
-  { id: 5, name: "Docker" },
   { id: 6, name: "Node.js" },
-  { id: 7, name: "React Native" },
   { id: 8, name: "Next.js" },
-  { id: 9, name: "API" },
 ];
 
 // Navigation
-export const navItems = [
+
+type navItem = {
+  name: string;
+  target?: string;
+  href?: string;
+};
+
+export const navItems: navItem[] = [
   { name: "About", target: "about" },
   { name: "Projects", target: "projects" },
   { name: "Certifications", target: "certifications" },
   { name: "Contact", target: "contact" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
 ];
 
 // Certifications
@@ -85,6 +88,8 @@ export const certifications: Certification[] = [
     date: "23/07/2022",
     imageSrc: "/certifications/ironhack.svg",
     description: "Full-Stack Web Developer Bootcamp at Ironhack",
+    badgeLink:
+      "https://www.credential.net/33acbeb0-11a2-40c8-bc8c-703a8d2ccd8a#acc.N6v50V9M",
   },
   {
     id: 2,

@@ -34,8 +34,8 @@ const HeroSection = () => {
                         <Image
                             src="/certifications/aws-certified-cloud-practitioner.png"
                             alt="AWS Certified Cloud Practitioner"
-                            width={96}
-                            height={96}
+                            width={600}
+                            height={600}
                             className="h-20 w-20 lg:h-24 lg:w-24"
                         />
                     </Link>
@@ -48,8 +48,8 @@ const HeroSection = () => {
                         <Image
                             src="/certifications/aws-certified-solutions-architect-associate.png"
                             alt="AWS Certified Solutions Architect Associate"
-                            width={96}
-                            height={96}
+                            width={600}
+                            height={600}
                             className="h-20 w-20 lg:h-24 lg:w-24"
                         />
                     </Link>
