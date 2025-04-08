@@ -3,54 +3,67 @@ import { Certification, Technology } from "@/types";
 // Projects
 export const projects = [
   {
+    id: 1,
+    title: "ChainOPT AI - Supply Chain Optimization",
+    description:
+      "A web application that uses AI to optimize supply chain processes, improving efficiency and reducing costs.",
+    technologies: [
+      "AWS",
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Lambda",
+      "DynamoDB",
+      "S3",
+      "OpenAI",
+    ],
+    githubLink: "https://github.com/Jswears/supply-chain-optimizer-backend",
+    externalLink: "https://chainopt.joaquinswears.com",
+    imageSrc: "/projects/chainopt.png",
+  },
+  // {
+  //   id: 2,
+  //   title: "Vinotique Wine Shop",
+  //   description:
+  //     "An e-commerce platform for wine enthusiasts to discover and purchase wines.",
+  //   technologies: [
+  //     "AWS",
+  //     "TypeScript",
+  //     "Nextjs",
+  //     "Node.js",
+  //     "Lambda",
+  //     "DynamoDB",
+  //     "S3",
+  //   ],
+  //   githubLink: "https://github.com/Jswears/vinotique-ecommerce-backend",
+  //   externalLink: "https://vinotique.joaquinswears.com/",
+  //   imageSrc: "/projects/vinotique.png",
+  // },
+  {
+    id: 3,
+    title: "Serverless Contact Form",
+    description:
+      "A serverless contact form that sends emails using AWS Lambda.",
+    technologies: ["AWS", "TypeScript", "Node.js", "Lambda", "SES"],
+    githubLink: "https://github.com/Jswears/serverless-contact-form.git",
+    externalLink: "http://localhost:3000/#contact",
+    imageSrc: "/projects/contact-form.png",
+  },
+  {
+    id: 4,
     title: "Unknown Chronicles",
     description:
-      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.",
-    technologies: ["AWS", "React", "JavaScript"],
-    githubLink: "https://github.com/yourusername/unknown-chronicles",
-    externalLink: "https://unknown-chronicles.example.com",
-    imageSrc: "/projects/unknown-chronicles.webp",
-    blogPostLink: "/blog/unknown-chronicles",
-  },
-  {
-    title: "Task Manager Pro",
-    description:
-      "An advanced task manager application built to organize and optimize personal productivity.",
-    technologies: ["TypeScript", "React", "Node.js"],
-    githubLink: "https://github.com/yourusername/task-manager-pro",
-    externalLink: "https://task-manager-pro.example.com",
-    imageSrc: "/projects/unknown-chronicles.webp",
-    blogPostLink: "/blog/task-manager-pro",
-  },
-  {
-    title: "Fitness Tracker",
-    description:
       "A mobile app to track fitness goals and monitor physical activity over time.",
-    technologies: ["AWS", "TypeScript", "React Native"],
-    githubLink: "https://github.com/yourusername/fitness-tracker",
-    externalLink: "https://fitness-tracker.example.com",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "DOM Manipulation",
+      "JS Canvas",
+    ],
+    githubLink: "https://github.com/Jswears/unknownChronicles",
+    externalLink: "https://jswears.github.io/unknownChronicles/",
     imageSrc: "/projects/unknown-chronicles.webp",
-    blogPostLink: "/blog/fitness-tracker",
-  },
-  {
-    title: "E-Commerce Shop",
-    description:
-      "An e-commerce platform built with modern technologies for a smooth shopping experience.",
-    technologies: ["JavaScript", "React", "Next.js", "Node.js"],
-    githubLink: "https://github.com/yourusername/e-commerce-shop",
-    externalLink: "https://ecommerce-shop.example.com",
-    imageSrc: "/projects/unknown-chronicles.webp",
-    blogPostLink: "/blog/e-commerce-shop",
-  },
-  {
-    title: "Recipe Finder",
-    description:
-      "A web app that helps users find recipes by inputting ingredients they have at home.",
-    technologies: ["JavaScript", "React", "API"],
-    githubLink: "https://github.com/yourusername/recipe-finder",
-    externalLink: "https://recipe-finder.example.com",
-    imageSrc: "/projects/unknown-chronicles.webp",
-    blogPostLink: "/blog/recipe-finder",
   },
 ];
 
