@@ -53,7 +53,7 @@ export const projects = [
     id: 4,
     title: "Unknown Chronicles",
     description:
-      "A mobile app to track fitness goals and monitor physical activity over time.",
+      "Click on 2D Game, using DOM manipulation.",
     technologies: [
       "HTML",
       "CSS",
