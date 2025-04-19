@@ -46,7 +46,7 @@ export const projects = [
       "A serverless contact form that sends emails using AWS Lambda.",
     technologies: ["AWS", "TypeScript", "Node.js", "Lambda", "SES"],
     githubLink: "https://github.com/Jswears/serverless-contact-form.git",
-    externalLink: "http://localhost:3000/#contact",
+    externalLink: "#contact",
     imageSrc: "/projects/contact-form.png",
   },
   {
