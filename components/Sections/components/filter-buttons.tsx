@@ -28,7 +28,7 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTec
                             {showAll ? "Show Less" : "More"}
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="bg-charcoal-gray">
                         {technologies.slice(5).map((tech) => (
                             <DropdownMenuItem
                                 key={tech.id}
@@ -36,7 +36,7 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ technologies, selectedTec
                                     toggleTechnology(tech)
                                     setShowAll(false)
                                 }}
-                                className={`${selectedTechnologies.includes(tech) ? "bg-white text-gray-800" : "bg-gray-800 text-white"} border-b p-1 mb-1 transition-all duration-200`}
+                                className={`${selectedTechnologies.includes(tech) ? "bg-white text-gray-800" : "bg-black text-white"} border-b p-1 mb-1 transition-all duration-200 cursor-pointer`}
                             >
                                 {tech.name}
                             </DropdownMenuItem>

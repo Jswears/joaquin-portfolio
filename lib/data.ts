@@ -4,46 +4,27 @@ import { Certification, Technology } from "@/types";
 export const projects = [
   {
     id: 1,
-    title: "ChainOPT AI - Supply Chain Optimization",
+    title: "CloudWatch Enhanced Weather Metrics",
     description:
-      "A web application that uses AI to optimize supply chain processes, improving efficiency and reducing costs.",
-    technologies: [
-      "AWS",
-      "TypeScript",
-      "Next.js",
-      "Node.js",
-      "Lambda",
-      "DynamoDB",
-      "S3",
-      "OpenAI",
-    ],
+      "Collects weather data using OpenWeatherMap API, pushes metrics to CloudWatch, and sends SNS alerts.",
+    technologies: ["AWS", "Python", "Terraform", "CloudWatch", "SNS", "Lambda"],
+    githubLink: "https://github.com/Jswears/cloudwatch-enhanced",
+    externalLink: "https://www.youtube.com/watch?v=gk5vjf95TJ8",
+    imageSrc: "/projects/architecture-diagram.png",
+  },
+  {
+    id: 2,
+    title: "ChainOPT AI - Supply Chain Optimization",
+    description: "AI-powered web app for optimizing supply chain processes.",
+    technologies: ["AWS", "TypeScript", "Next.js", "Node.js", "DynamoDB", "S3"],
     githubLink: "https://github.com/Jswears/supply-chain-optimizer-backend",
     externalLink: "https://chainopt.joaquinswears.com",
     imageSrc: "/projects/chainopt.png",
   },
-  // {
-  //   id: 2,
-  //   title: "Vinotique Wine Shop",
-  //   description:
-  //     "An e-commerce platform for wine enthusiasts to discover and purchase wines.",
-  //   technologies: [
-  //     "AWS",
-  //     "TypeScript",
-  //     "Nextjs",
-  //     "Node.js",
-  //     "Lambda",
-  //     "DynamoDB",
-  //     "S3",
-  //   ],
-  //   githubLink: "https://github.com/Jswears/vinotique-ecommerce-backend",
-  //   externalLink: "https://vinotique.joaquinswears.com/",
-  //   imageSrc: "/projects/vinotique.png",
-  // },
   {
     id: 3,
     title: "Serverless Contact Form",
-    description:
-      "A serverless contact form that sends emails using AWS Lambda.",
+    description: "Serverless form that sends emails using AWS Lambda and SES.",
     technologies: ["AWS", "TypeScript", "Node.js", "Lambda", "SES"],
     githubLink: "https://github.com/Jswears/serverless-contact-form.git",
     externalLink: "#contact",
@@ -52,15 +33,8 @@ export const projects = [
   {
     id: 4,
     title: "Unknown Chronicles",
-    description:
-      "Click on 2D Game, using DOM manipulation.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM Manipulation",
-      "JS Canvas",
-    ],
+    description: "2D click game using DOM manipulation and JS Canvas.",
+    technologies: ["HTML", "CSS", "JavaScript", "DOM", "JS Canvas"],
     githubLink: "https://github.com/Jswears/unknownChronicles",
     externalLink: "https://jswears.github.io/unknownChronicles/",
     imageSrc: "/projects/unknown-chronicles.webp",
@@ -70,10 +44,12 @@ export const projects = [
 // Technologies
 export const technologies: Technology[] = [
   { id: 1, name: "AWS" },
-  { id: 2, name: "React" },
   { id: 4, name: "TypeScript" },
   { id: 6, name: "Node.js" },
   { id: 8, name: "Next.js" },
+  { id: 9, name: "Python" },
+  { id: 14, name: "Terraform" },
+  { id: 16, name: "DynamoDB" },
 ];
 
 // Navigation
