@@ -13,15 +13,6 @@ export const projects = [
     imageSrc: "/projects/architecture-diagram.png",
   },
   {
-    id: 2,
-    title: "ChainOPT AI - Supply Chain Optimization",
-    description: "AI-powered web app for optimizing supply chain processes.",
-    technologies: ["AWS", "TypeScript", "Next.js", "Node.js", "DynamoDB", "S3"],
-    githubLink: "https://github.com/Jswears/supply-chain-optimizer-backend",
-    externalLink: "https://chainopt.joaquinswears.com",
-    imageSrc: "/projects/chainopt.png",
-  },
-  {
     id: 3,
     title: "Serverless Contact Form",
     description: "Serverless form that sends emails using AWS Lambda and SES.",
