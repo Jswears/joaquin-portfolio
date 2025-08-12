@@ -4,6 +4,15 @@ import { Certification, Technology } from "@/types";
 export const projects = [
   {
     id: 1,
+    title: "AWS EC2 Cost Monitor",
+    description:
+      "Monitors AWS EC2 costs and usage, providing insights and alerts.",
+    technologies: ["AWS", "Python", "Boto3", "CloudWatch", "EC2", "Twilio"],
+    githubLink: "https://github.com/Jswears/aws-cost-monitor",
+    imageSrc: "/projects/cost-monitor-architecture-diagram.png",
+  },
+  {
+    id: 2,
     title: "CloudWatch Enhanced Weather Metrics",
     description:
       "Collects weather data using OpenWeatherMap API, pushes metrics to CloudWatch, and sends SNS alerts.",

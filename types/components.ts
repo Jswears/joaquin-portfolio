@@ -26,7 +26,7 @@ export interface ProjectCardProps {
   description: string;
   technologies: string[];
   githubLink: string;
-  externalLink: string;
+  externalLink?: string;
   imageSrc: string;
   blogPostLink?: string;
 }

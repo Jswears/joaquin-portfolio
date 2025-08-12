@@ -48,10 +48,12 @@ const ProjectCard = ({
                     </Link>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                    <Link href={externalLink} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                    </Link>
+                    {externalLink && (
+                        <Link href={externalLink} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                        </Link>
+                    )}
                 </Button>
                 {blogPostLink && (
                     <Button variant="outline" size="sm" asChild>
